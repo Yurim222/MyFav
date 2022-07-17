@@ -16,6 +16,7 @@ const styles = {
         marginBottom : "20pt",
         marginLeft : 'auto',
         marginRight : 'auto',
+        backgroundColor : "white",
     },
 };
 
@@ -54,11 +55,10 @@ export default function MusicList ({list}) {
                 <Card sx={styles.card} key={item.collectionId}>
                   <CardContent style={{display:"flex", flexDirection: "row"}}>
                     <img className = "artwork" src = {item.artworkUrl100} width= "70px" height="70px" style={{marginRight:"3%", justifyContent:"left"}}/>
-                    <div style={{justifyContent:"center"}}>
-                        <Typography variant="subtitle2"> {item.artistName}</Typography>
+                    <div style={{justifyContent:"center", width : 600}}>
                         <Typography variant="subtitle1"> {item.collectionCensoredName}</Typography>
+                        <Typography variant="subtitle2"> {item.artistName}</Typography>
                     </div>
-                    </CardContent>
                     <CardActions>
                         <IconButton  onClick={()=>{
                                 toggleFavorite(item.collectionId, item.collectionName);
@@ -69,7 +69,7 @@ export default function MusicList ({list}) {
                                 <Favorite /> : <FavoriteBorder /> }
                         </IconButton>
                     </CardActions>
-                                    
+                    </CardContent>
                 </Card>)
             })}
             <SnackMsg open = {snackState.open} message={snackState.msg} 

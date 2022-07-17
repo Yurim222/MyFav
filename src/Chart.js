@@ -1,17 +1,35 @@
 import React from 'react';
 import {Card, CardContent, Typography, CardActions, IconButton} from '@mui/material';
 import {Favorite, FavoriteBorder} from '@mui/icons-material';
+import SnackMsg from './SnackMsg';
+import {useStore} from "../src/model/Store"
 
 
 
 export default function Chart ({list}) {
     const [likes, setLikes] = React.useState({});
+    const [snackState, setSnackState] = React.useState({open : false, msg : ''})
 
-const toggleFavorite = (id) => () => {
-    setLikes({...likes, [id] : !likes[id]});
-}
+    const toggleFavorite = (id, name) => {
+
+        setLikes({...likes, [id] : !likes[id]}); 
+        setSnackState({...snackState, open : true, msg : `${name} is added` })
+    }
+    
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setSnackState({open : false, msg : ''});
+    }     
+
+    const {likelist,add} = useStore();
+
     return (
         <div style={{backgroundColor : "#303030", outlineColor:"pink"}}>
+        <Typography variant='h2' style={{ marginTop : '2%', marginBottom : '2%', fontFamily :"fantasy"}} color="pink" align="center">
+                    Billboard 200</Typography>
             {list.data.map(item => {
                 return (
                 <Card style={{backgroundColor:"#303030"}}>
@@ -24,15 +42,12 @@ const toggleFavorite = (id) => () => {
                         <Typography variant="subtitle1" color="white"> {item.name}</Typography>
                         <Typography variant="subtitle2" color="white"> {item.artist}</Typography>
                         </div>   
-                        <CardActions>
-                        <IconButton  onClick={toggleFavorite(item.rank)} style = {{color : "pink"}}>
-                            {(likes[item.rank] === true) ? 
-                                <Favorite /> : <FavoriteBorder /> }
-                        </IconButton>
-                    </CardActions>
                         </CardContent>
-                </Card>)
+                </Card>
+                )
             })}
+            <SnackMsg open = {snackState.open} message={snackState.msg} 
+                onClose={handleSnackbarClose}/>
         </div>
     ); 
 }

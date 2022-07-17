@@ -48,8 +48,9 @@ export default function Secondtab() {
   useEffect(()=>{
     console.log("likelist",likelist.map(v=>v))
   },[likelist])
-  return (
-    <>
+  return (<div>
+    <Typography variant='h2' style={{ marginTop : '2%', marginBottom : '2%', fontFamily :"fantasy"}} color="pink" align="center">
+    likes</Typography>
       {likelist.map((v)=>{
         return(
           <Card sx={styles.card} key={v.collectionId}>
@@ -74,7 +75,7 @@ export default function Secondtab() {
       })}
       <SnackMsg open = {snackState.open} message={snackState.msg} 
                 onClose={handleSnackbarClose}/>
-    </>
+    </div>
   );
 }
 

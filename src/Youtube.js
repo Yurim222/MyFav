@@ -55,22 +55,35 @@ export default function Youtube(){
         console.log(button);
     }
 
+    const styles = {
+        btn : {
+            padding:"0px", 
+            border:"0px", 
+            width:200, 
+            height:200, 
+            margin :"1.5%"
+        },
+        img : {
+            width:200,
+            height:200,
+        }
+    };
 
     return(
-        <div align = "center">
-            <h1><IoHeartCircleOutline/> {name}님의 플레이리스트 </h1>
-            <h1>click !</h1>
-            <VscTriangleDown/>
+        <div align = "center" style={{backgroundColor:"#303030"}}>
+            <h1 style={{color :"pink"}}><IoHeartCircleOutline color="pink"/> {name}님의 플레이리스트 </h1>
+            <h1 style={{color :"pink"}}>click !</h1>
+            <VscTriangleDown color="pink"/>
             <div align = "center">
-            <div><button onClick = {onClickHandler1}><img src = "../img/momento.png" style ={{width:200, height:200}}/></button>
-            <button onClick = {onClickHandler2}><img src = "../img/heartiz.png" style ={{width:200, height:200}}/></button>
-            <button onClick = {onClickHandler3}><img src = "../img/everyletter.png" style ={{width:200, height:200}}/></button></div>
-            <div><button onClick = {onClickHandler4}><img src = "../img/4only.png" style ={{width:200, height:200}}/></button>
-            <button onClick = {onClickHandler5}><img src = "../img/savage.png" style ={{width:200, height:200}}/></button>
-            <button onClick = {onClickHandler6}><img src = "../img/newplant.png" style ={{width:200, height:200}}/></button></div>
+            <div><button onClick = {onClickHandler1} style={styles.btn}><img src = "../img/momento.png" style ={styles.img}/></button>
+            <button onClick = {onClickHandler2} style={styles.btn}><img src = "../img/heartiz.png" style ={styles.img}/></button>
+            <button onClick = {onClickHandler3} style={styles.btn}><img src = "../img/everyletter.png" style ={styles.img}/></button></div>
+            <div><button onClick = {onClickHandler4} style={styles.btn}><img src = "../img/4only.png" style ={styles.img}/></button>
+            <button onClick = {onClickHandler5} style={styles.btn}><img src = "../img/savage.png" style ={styles.img}/></button>
+            <button onClick = {onClickHandler6} style={styles.btn}><img src = "../img/newplant.png" style ={styles.img}/></button></div>
             </div>
-            <h1><BsBookmarkHeartFill/></h1>
-            <h1>videos</h1>
+            <h1><BsBookmarkHeartFill style={{color :"pink"}}/></h1>
+            <h1 style={{color :"pink"}}>videos</h1>
             <div align = "center">
                 <ReactPlayer 
                 className = "player"
@@ -79,9 +92,9 @@ export default function Youtube(){
                 muted = {true}
                 controls = {true}
                 />
-                <h3>탭 이동 후 음악 재생 됩니다</h3>
-                <IoLogoOctocat/>
-                <h5>@mashedpotato.2022_ajou_summercoding</h5>
+                <h3 style={{color :"pink"}}>탭 이동 후 음악 재생 됩니다</h3>
+                <IoLogoOctocat color="pink"/>
+                <h5 style={{color :"pink"}}>@mashedpotato.2022_ajou_summercoding</h5>
             </div>
             </div>
         )

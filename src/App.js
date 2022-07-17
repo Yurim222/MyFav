@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Box, Tabs, Tab, Typography, AppBar, CssBaseline} from '@mui/material';
 import SearchPage from './SearchPage';
 import Youtube from './Youtube';
-
 import Secondtab from './Secondtab';
 import Chart from './Chart';
 import chart_list from './data';
@@ -16,16 +15,17 @@ export default function App () {
     }
 
     return (
+        <div style= {{ backgroundColor : "#303030", minHeight : "713px"}}>
         <React.Fragment>
             <CssBaseline/>
             <AppBar position="fixed">
-                <Typography align="center" variant="h3" color="inherit">Favorite Music</Typography>
+            <Typography align="center" variant="h3" color="inherit">Favorite Music</Typography>
             </AppBar>
             <AppBar position="fixed" style={{backgroundColor : "#303030", outlineColor:"#303030"}}>
                 <Typography align="center" variant="h3" color="pink" style={{fontFamily :"fantasy"}}>Favorite Music</Typography>
             </AppBar>
             <div style={{height: 60, width: '100%', backgroundColor : "#303030"}}></div>
-            <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
+            <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor : "#303030"}}>
                 <Tabs value={currentTab} onChange={handleTabChange} aria-label="basic tabs" centered >
                   <Tab label="Search Music" value={0} style={{color: "pink"}}/>
                   <Tab label="Favorites" value={1} style={{color: "pink"}}/>
@@ -40,6 +40,7 @@ export default function App () {
             { currentTab == 3 && <Youtube urlid = "ptfbkgbiitM"/>}
             
         </React.Fragment>
+        </div>
     )
 }
 
