@@ -6,7 +6,7 @@ import {IoHeartCircleOutline, IoLogoOctocat} from 'react-icons/io5';
 
 var i = 0;
 var url = "https://youtube.com/embed/";
-var urlid = ['ptfbkgbiitM','U1vB5_iWRaw','HoXrZsXyYMw','JAj9mGT0OfY','rfl9vXP_fnQ','bn_l7PTuSH0'];
+var urlid = ['JC6budcACNE','6eEZ7DJMzuk','HoXrZsXyYMw','JAj9mGT0OfY','WPdWvnAAurg','bn_l7PTuSH0'];
 var nameid = ['생감자', '최윤서', '한아영', '김유림', '이은정', '고하루'];
 let button = url+urlid[i];
 
