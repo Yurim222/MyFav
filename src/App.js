@@ -41,13 +41,9 @@ export default function App () {
             </Box>
 
             { currentTab == 0 && <SearchPage list={searchResult} onSearch={setSearchResult}/> }
-            { currentTab == 1 &&  
-                <Typography align="center" variant="h2" > Item Two </Typography>}
-            { currentTab == 2 &&  
-                <Typography align="center" variant="h2" > Item Three </Typography>}
-            { currentTab == 3 && <Youtube urlid = "ptfbkgbiitM"/>} 
-            { currentTab == 1 && <Secondtab></Secondtab> }
+            { currentTab == 1 && <Secondtab/>}
             { currentTab == 2 &&  <Chart list={chart_list}/>}
+            { currentTab == 3 && <Youtube urlid = "ptfbkgbiitM"/>}
             
         </React.Fragment>
     )
