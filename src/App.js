@@ -20,23 +20,17 @@ export default function App () {
             <CssBaseline/>
             <AppBar position="fixed">
                 <Typography align="center" variant="h3" color="inherit">Favorite Music</Typography>
-
+            </AppBar>
             <AppBar position="fixed" style={{backgroundColor : "#303030", outlineColor:"#303030"}}>
                 <Typography align="center" variant="h3" color="pink" style={{fontFamily :"fantasy"}}>Favorite Music</Typography>
             </AppBar>
             <div style={{height: 60, width: '100%', backgroundColor : "#303030"}}></div>
             <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
-                <Tabs value={currentTab} onChange={handleTabChange} aria-label="basic tabs"
-                    centered >
-                  <Tab label="Search Music" value={0}  />
-                  <Tab label="Favorites" value={1}  />
-                  <Tab label="More Contents"value={2}  />
-                  <Tab label="Video" value={3}  />
-                    centered style={{backgroundColor : "#303030", color: "pink"}}>
+                <Tabs value={currentTab} onChange={handleTabChange} aria-label="basic tabs" centered >
                   <Tab label="Search Music" value={0} style={{color: "pink"}}/>
                   <Tab label="Favorites" value={1} style={{color: "pink"}}/>
                   <Tab label="Chart"value={2} style={{color: "pink"}}/>
-                  <Tab label="More Content2"value={3} style={{color: "pink"}}/>
+                  <Tab label="Video"value={3} style={{color: "pink"}}/>
                 </Tabs>
             </Box>
 
