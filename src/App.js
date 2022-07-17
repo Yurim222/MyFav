@@ -15,7 +15,7 @@ export default function App () {
     }
 
     return (
-        <div style= {{ backgroundColor : "#303030", minHeight : "713px"}}>
+        <div style= {{ backgroundColor : "#303030", minHeight : "900px"}}>
         <React.Fragment>
             <CssBaseline/>
             <AppBar position="fixed">
