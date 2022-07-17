@@ -31,14 +31,14 @@ export default function SearchPage ({list, onSearch}) {
                     </TextField>
                     <Button variant="contained" color="primary" 
                         type="submit" onClick={handleSearch} 
-                        style={{marginLeft : 20, color : "black"}}>
+                        style={{marginLeft : 20}}>
                         Search
                     </Button>
                 </div>
             </form>
 
-            <MusicList list={list}></MusicList>
+            <MusicList list={list}>
+            </MusicList>
         </React.Fragment>
     )
 }
-
