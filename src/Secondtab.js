@@ -43,7 +43,7 @@ export default function Secondtab() {
       setSnackState({open : false, msg : ''});
   } 
   const toggleFavoriteDel = (id,name)=>{
-    setSnackState({...snackState, open : true, msg : `${name} is clicked` })
+    setSnackState({...snackState, open : true, msg : `${name} is removed` })
 }
   useEffect(()=>{
     console.log("likelist",likelist.map(v=>v))
@@ -53,11 +53,13 @@ export default function Secondtab() {
       {likelist.map((v)=>{
         return(
           <Card sx={styles.card} key={v.collectionId}>
-            <CardContent>
-              <Typography variant="subtitle2"> {v.artistName}</Typography>
+            <CardContent style={{display:"flex", flexDirection: "row"}}>
+              <img className = "artwork" src = {v.artworkUrl100} style={{marginRight:"3%", width : 70, height : 70}}/>
+              <div style={{justifyContent:"center", width : 600}}>
               <Typography variant="subtitle1"> {v.collectionCensoredName}</Typography>
-            </CardContent>
-            <CardActions>
+              <Typography variant="subtitle2"> {v.artistName}</Typography>
+              </div>
+            <CardActions>  
                         <IconButton  onClick={()=>{
                               toggleFavoriteDel(v.collectionId,v.collectionName)
                               delLike(v)
@@ -66,6 +68,7 @@ export default function Secondtab() {
                         <Favorite /> 
                         </IconButton>
             </CardActions>
+            </CardContent>
           </Card>
         )
       })}
