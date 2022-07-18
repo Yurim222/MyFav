@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardContent, Typography, CardActions, IconButton} from '@mui/material';
-import {Favorite, FavoriteBorder} from '@mui/icons-material';
+import {AiFillLike, AiOutlineLike} from 'react-icons/ai';
 import SnackMsg from './SnackMsg';
 import {useStore} from "../src/model/Store"
 
@@ -10,7 +10,7 @@ export default function Chart ({list}) {
     const [likes, setLikes] = React.useState({});
     const [snackState, setSnackState] = React.useState({open : false, msg : ''})
 
-    const toggleFavorite = (id, name) => {
+    const togglelike = (id, name) => {
 
         setLikes({...likes, [id] : !likes[id]}); 
         setSnackState({...snackState, open : true, msg : `${name} is added` })
@@ -42,6 +42,15 @@ export default function Chart ({list}) {
                         <Typography variant="subtitle1" color="white"> {item.name}</Typography>
                         <Typography variant="subtitle2" color="white"> {item.artist}</Typography>
                         </div>   
+                        <CardActions>
+                        <IconButton  onClick={()=>{
+                                togglelike(item.rank, item.name);
+                            }
+                                } style={{color : "pink"}}>
+                        {(likes[item.rank] === true) ? 
+                                <AiFillLike/> : <AiOutlineLike/> }
+                        </IconButton>
+                    </CardActions>
                         </CardContent>
                 </Card>
                 )
